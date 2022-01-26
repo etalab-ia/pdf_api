@@ -1,19 +1,11 @@
 version: '3'
 
 services:
-  pdf_api:
-    container_name: pdf_api
+  pdf_app:
+    container_name: pdf_app
     restart: always
-    build: ./pdf_api
+    build: ./front
     ports:
-      - "8000:8000"
-    command: gunicorn -w 2 --timeout 90 -b 0.0.0.0:8000 wsgi:app
+      - "8501:8501"
+    command: streamlit run app.py --server.enableCORS=false --server.enableXsrfProtection=false --server.enableWebsocketCompression=false
 
-  nginx_pdf:
-    container_name: nginx_pdf
-    restart: always
-    build: ./nginx
-    ports:
-      - "80:80"
-    depends_on:
-      - pdf_api

@@ -22,6 +22,7 @@ dependencies:
   - xz=5.2.5=h7b6447c_0
   - zlib=1.2.11=h7b6447c_3
   - pip:
+    - streamlit
     - aniso8601==8.0.0
     - appdirs==1.4.4
     - argopt==0.6.1
@@ -63,4 +64,3 @@ dependencies:
     - urllib3==1.25.9
     - werkzeug==1.0.1
     - zipp==3.1.0
-
