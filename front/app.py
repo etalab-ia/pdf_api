@@ -15,6 +15,9 @@ ALLOWED_EXTENSIONS = set(['pdf'])
 CWD = Path(os.getcwd())
 UPLOAD_DIRECTORY = CWD / "results_OCR"
 
+if not os.path.exists(UPLOAD_DIRECTORY):
+    os.makedirs(UPLOAD_DIRECTORY)
+
 st.title('OCR my PDF')
 uploaded_files = st.file_uploader('Upload your file(s)', accept_multiple_files=True)
 
